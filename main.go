@@ -4,7 +4,6 @@
 package main
 
 import (
-	"context"
 	"flag"
 
 	"github.com/rancher/wrangler-api/pkg/generated/controllers/apps"
@@ -29,7 +28,7 @@ func init() {
 
 func main() {
 	// set up signals so we handle the first shutdown signal gracefully
-	ctx := signals.SetupSignalHandler(context.Background())
+	ctx := signals.SetupSignalContext()
 
 	// This will load the kubeconfig file in a style the same as kubectl
 	cfg, err := kubeconfig.GetNonInteractiveClientConfig(kubeconfigFile).ClientConfig()

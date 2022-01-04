@@ -16,7 +16,8 @@ func main() {
 				Types: []interface{}{
 					v1alpha1.Foo{},
 				},
-				GenerateTypes: true,
+				GenerateClients: true,
+				GenerateTypes:   true,
 			},
 			// Optionally you can use wrangler-api project which
 			// has a lot of common kubernetes APIs already generated.
